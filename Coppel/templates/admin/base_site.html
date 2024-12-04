@@ -1,0 +1,36 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | COPPEL{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name">COPPEL</h1>
+
+
+
+{% endblock %}
+
+
+
+
+
+{% block nav-global %}{% endblock %}
+
+{% block extrahead %}
+    <!-- Incluir el CSS personalizado -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+ 
+{% block content %}
+    <div class="dropdown-menu-container">
+        <h2>Administración del Sitio</h2>
+        <div class="dropdown">
+            <button class="dropbtn">Autenticación y Autorización</button>
+            <div class="dropdown-content">
+                <a href="{% url 'admin:auth_user_changelist' %}">Usuarios</a>
+                <a href="{% url 'admin:auth_group_changelist' %}">Grupos</a>
+            </div>
+        </div>
+
+
+{% endblock %}
